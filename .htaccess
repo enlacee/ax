@@ -1,0 +1,7 @@
+
+RewriteEngine on
+
+#Aqui definimos a que carpetas se le permiten accesos desde la URL separado con la ( | )
+RewriteCond $1 !^(index\.php|robots\.txt|site\.xml|images|assets)
+
+RewriteRule ^(.*)$ index.php?/$1 [QSA,L]

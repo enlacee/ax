@@ -1,0 +1,245 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Russo+One);
+
+ol, ul {
+  list-style: none;
+  padding:0px;
+  margin:0px;
+}
+
+.relative {
+  position: relative;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+/* HEADER */
+#wrap > header {
+  background-color: #333;
+  padding-bottom: 20px;
+}
+
+#header {
+  display: block;
+  margin: 0 0 25px 0;
+  padding: 20px 0;
+  border-bottom: 1px solid #202020;
+  background-color: #242523;
+}
+
+#header a.logo {
+  text-decoration:none;
+}
+
+#header a.logo > h1 {
+  margin: 11px 0 0 0;
+  padding: 0;
+  color: #FFFFFF;
+  font-size: 40px;
+  line-height: 14px;
+  text-decoration:none;
+  font-family: 'Russo One', sans-serif;
+}
+
+#navigation {
+  
+}
+
+#menu-toggle {
+  display: none;
+  float: right;
+}
+
+/* HEADER > MENU */
+#main-menu {
+  float: right;
+  font-size: 0;
+  margin: 10px 0;
+}
+
+#main-menu > li {
+  display: inline-block;
+  margin-left: 30px;
+  padding: 2px 0;
+}
+
+#main-menu > li.parent {
+
+}
+
+#main-menu > li.parent > a {
+  padding-left: 14px;
+}
+
+#main-menu > li > a {
+  color: #FBFBFB;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 14px;
+  padding: 30px 0;
+  text-decoration:none;
+}
+
+#main-menu > li:hover > a,
+#main-menu > li.current-menu-item > a {
+  color: #919296;
+}
+
+/* HEADER > MENU > DROPDOWN */
+#main-menu li {
+  position: relative;
+}
+
+ul.sub-menu { /* level 2 */
+  display: none;
+  left: 0px;
+  top: 38px;
+  padding-top: 10px;
+  position: absolute;
+  width: 150px;
+  z-index: 9999;
+}
+
+ul.sub-menu ul.sub-menu { /* level 3+ */
+  margin-top: -1px;
+  padding-top: 0;
+  left: 149px;
+  top: 0px;
+}
+
+ul.sub-menu > li > a {
+  border-top: none;
+  color: #bbb;
+  display: block;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 10px 12px;
+}
+
+ul.sub-menu > li > a:hover {
+  background-color: #2a2a2a; 
+  color: #fff;
+}
+
+ul.sub-menu > li:first-child {
+  border-top: 3px solid #919296;
+}
+
+ul.sub-menu ul.sub-menu > li:first-child {
+  border-top: 0;
+}
+
+ul.sub-menu > li:last-child > a {
+  border-radius: 0 0 2px 2px;
+}
+
+ul.sub-menu > li > a.parent {
+  background-image: url(../images/arrow.png);
+  background-size: 5px 9px;
+  background-repeat: no-repeat;
+  background-position: 95% center;
+}
+
+#main-menu li:hover > ul.sub-menu {
+  display: block; /* show the submenu */
+}
+
+@media all and (min-width: 700px) {
+
+  ul.sub-menu {
+    background-color: #202020;
+    padding-top: 0;
+    top: 49px;
+  }
+  
+}
+
+@media all and (max-width: 700px) {
+
+  #navigation {
+    position: absolute;
+    margin-top: 20px;
+    background-color: #202020;
+    width: 100%;
+    max-width: 500px;
+    right: 0;
+    top: 36px;
+  }
+
+  #menu-toggle {
+    display: block;
+    font-size: 25px;
+    color: #FBFBFB;
+  }
+
+  #menu-toggle:hover,
+  #menu-toggle:focus {
+    color: #919296;
+  }
+
+  #main-menu {
+    display: none;
+    float: none;
+  }
+
+  #main-menu li {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  #main-menu > li {
+    margin-top: -1px;
+  }
+
+  #main-menu > li:first-child {
+    margin-top: 0;
+  }
+
+  #main-menu > li > a {
+    border: 0;
+    color: #bbb;
+    display: block;
+    font-size: 14px;
+    padding: 12px !important;
+    padding: 0;
+  }
+
+  #main-menu li > a:hover {
+    background-color: #444; 
+  }
+
+  #main-menu > li.parent {
+    background: none !important;
+    padding: 0;
+  }
+
+  #main-menu > li:hover > a,
+  #main-menu > li.current-menu-item > a {
+    color: #fff !important;
+  }
+
+  ul.sub-menu {
+    display: block;
+    margin-top: -1px;
+    margin-left: 0;
+    position: static;
+    padding: 0 0 0 20px;
+    width: inherit;
+    background-color: #202020;
+  }
+
+  ul.sub-menu > li:first-child {
+    border: 0;
+  }
+
+  ul.sub-menu > li > a.parent {
+    
+  }
+}

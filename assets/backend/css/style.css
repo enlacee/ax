@@ -1,0 +1,565 @@
+/* CSS Document */
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size:13px;
+	color:#525252;
+}
+
+/****************************************************
+// BREAK LINE CSS // OTHERS STYLES
+****************************************************/
+button, input, optgroup, select, option, textarea {
+  color: #525252;
+}
+
+
+#header.acceso .col_1 {
+	width: 100%;
+}
+
+#header.acceso .col_1 h1 {
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+
+#header.acceso .col_2 {
+	display: none;
+}
+
+.box_login {
+	margin: 20px auto 20px auto;
+  padding: 0;
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  border: 6px solid #ebebeb;
+}
+
+.box_login .box_login_border {
+	display: block;
+	margin: 0;
+  padding: 20px 20px 40px 20px;
+  border: 1px solid #E0E0E0;
+}
+
+.box_login .box_login_border #login_form,
+.box_login .box_login_border #login_form input {
+	text-align: center;
+}
+
+.box_login .box_login_border #login_form h4 {
+	display: block;
+	text-align: center;
+	margin: 10px 0 10px 0;
+}
+
+.box_login .box_login_border #login_form p.text1 {
+	color: #9E9E9E;
+	margin: 20px 0 20px 0;
+}
+
+.box_login .box_login_border #login_form .form-control {
+	height: 40px;
+}
+
+.box_login .box_login_border #login_form .has-feedback .form-control {
+	padding-right: 0px;
+}
+
+.box_login .box_login_border #login_form .form-group .form-control-feedback {
+  top: 4px;
+}
+
+.boxes {
+	border: 1px solid #D4D4D4;
+	padding: 20px 25px;
+	display: block;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  	-moz-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  	-webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.boxes > h1, h2, h3, h4, h5 {
+	color: #4D4D4D;
+	margin: 10px 0 20px 0;
+	font-size: 35px;
+}
+
+.boxes .boxes_head > h1 {
+	display: block;
+	overflow: hidden;
+}
+
+.boxes .boxes_head > h1 > span.btn_right {
+	float: right;
+}
+
+
+
+#footer {
+	display: block;
+	padding-top: 22px;
+}
+
+
+#footer #copy > p {
+	font-size: 12px;
+	text-align: center;
+	color: #999;
+	margin: 1px 0;
+}
+
+
+
+/****************************************************
+// BREAK LINE CSS
+****************************************************/
+/**
+* Seccion ()
+*/
+/*End Seccion ()*/
+
+@media (min-width: 1200px) {
+	/*Seccion (00)*/	
+}
+
+
+
+
+@media (max-width: 1200px) {
+	/*Seccion (00)*/
+}
+
+
+
+
+@media (min-width: 992px) and (max-width: 1200px) {
+	/*Seccion (00)*/
+}
+
+
+
+
+
+
+@media (max-width: 992px) {
+	/*Seccion (00)*/
+}
+
+
+
+
+
+@media (min-width: 992px) {
+	/*Seccion (00)*/
+}
+
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+	/*Seccion (00)*/
+}
+
+
+
+
+
+
+@media (min-width: 768px) and (max-width: 1200px) {
+	/*Seccion (00)*/
+}
+
+
+
+
+@media (max-width: 768px) {
+	/*Seccion (00)*/
+}
+
+
+
+
+@media (max-width: 736px) {
+	/*Seccion (00)*/
+}
+
+
+@media (min-width: 684px) {
+	/*Seccion (00)*/
+}
+
+@media (max-width: 684px) {
+	/*Seccion (00)*/
+}
+
+
+@media (min-width: 667px) and (max-width: 992px) { 
+	/*Seccion (00)*/
+}
+
+
+@media (min-width: 667px) and (max-width: 768px) {
+	/*Seccion (00)*/
+}
+
+
+@media (max-width: 667px) { 
+	/*Seccion (00)*/
+}
+
+
+@media (min-width: 600px) and (max-width: 768px) {
+	/*Seccion (00)*/
+}
+
+
+@media (max-width: 600px) {
+	/*Seccion (00)*/
+}
+
+@media (min-width: 584px) {
+	/*Seccion (00)*/
+}
+
+@media (max-width: 584px) {
+	/*Seccion (00)*/
+}
+
+@media (min-width: 568px) and (max-width: 768px) {
+	/*Seccion (00)*/
+}
+
+
+
+@media (min-width: 568px) and (max-width: 600px) {
+	/*Seccion (00)*/
+}
+
+
+
+
+@media (max-width: 568px) {
+	/*Seccion (00)*/
+}
+
+
+
+@media (min-width: 480px) and (max-width: 568px) {
+	/*Seccion (00)*/
+}
+
+
+
+@media (max-width: 480px) {
+	/*Seccion (00)*/
+}
+
+
+@media (min-width: 414px) and (max-width: 480px) { 
+	/*Seccion (00)*/
+}
+
+
+@media (max-width: 414px) {
+	/*Seccion (00)*/
+}
+
+
+@media (min-width: 384px) and (max-width: 600px) { 
+	/*Seccion (00)*/
+}
+
+@media (min-width: 384px) and (max-width: 568px) {
+	/*Seccion (00)*/
+}
+
+@media (min-width: 384px) and (max-width: 480px) { 
+	/*Seccion (00)*/	
+}
+
+@media (max-width: 384px) { 
+	/*Seccion (00)*/	
+}
+
+@media (min-width: 320px) and (max-width: 480px) { 
+	/*Seccion (00)*/
+}
+
+@media (min-width: 320px) { 
+	/*Seccion (00)*/	
+}
+
+@media (min-width: 240px) and (max-width: 480px) { 
+	/*Seccion (00)*/
+}
+
+
+@media (min-width: 240px) and (max-width: 568px) {
+	/*Seccion (00)*/
+}
+
+@media (min-width: 240px) and (max-width: 991px) {
+	/*Seccion (00)*/
+}
+
+
+
+
+
+
+/****************************************************
+// BREAK LINE CSS
+****************************************************/
+
+/**
+* Orientacion (landscape - Horizontal)
+* min-width: 992px
+* max-width: 1024px
+* iPad - PC 
+*/
+@media screen and (min-width: 992px) and (max-width: 1024px) and (orientation: landscape) {
+	/*Seccion (00)*/
+}
+
+
+
+
+/**
+* Orientacion (portrait - Vertical)
+* max-width: 768px
+*/
+@media screen and (max-width: 768px) and (orientation: portrait) {
+	/*Seccion (00)*/
+}
+
+
+
+
+
+/**
+* Orientacion (landscape - Horizontal)
+* max-width: 736px
+* Iphone 6
+*/
+@media only screen and (max-width: 736px) and (orientation: landscape) {
+	/*Seccion (00)*/
+}
+
+
+
+
+
+
+
+
+/**
+* Orientacion (portrait - Vertical)
+* max-width: 736px
+* Iphone 6
+*/
+@media screen and (max-width: 736px) and (orientation: portrait) {
+	/*Seccion (00)*/
+}
+
+
+
+
+
+
+
+
+
+	
+/**
+* Orientacion (portrait - Vertical)
+* min-width: 600px
+* max-width: 768px
+* iPad
+*/
+@media only screen and (min-width: 600px) and (max-width: 768px) and (orientation: portrait) {
+	/*Seccion (00)*/
+}
+
+
+
+
+
+
+
+
+
+/**
+* Orientacion (landscape - Horizontal)
+* Max-width: 600px
+* Android (Nexus 4)
+*/
+@media (max-width: 600px) and (orientation:landscape) {
+	/*Seccion (00)*/
+}
+
+
+
+
+
+
+
+/**
+* Orientacion (landscape - Horizontal)
+* max-width: 667px
+* iPad
+*/
+@media only screen and (max-width: 667px) and (orientation: landscape) {
+	/*Seccion (00)*/
+}
+
+
+
+
+
+/**
+* Orientacion (landscape - Horizontal)
+* min-width: 600px
+* Android (Nexus 4)
+*/
+@media only screen  and (min-width: 600px) and (orientation:landscape) {
+	/*Seccion (00)*/
+}
+
+
+
+
+
+
+
+/**
+* Orientacion (portrait - Vertical)
+* min-width: 568px
+* max-width: 600px
+* Kindle - Tablet - Ipad
+*/
+@media only screen and (min-width: 568px) and (max-width: 600px) and (orientation: portrait) {
+	/*Seccion (00)*/
+}
+
+
+
+/**
+* Orientacion Horizontal (landscape)
+* width: 568px
+* iPhone 5 
+*/
+@media only screen and (max-width: 568px) and (orientation: landscape) {
+	/*Seccion (00)*/
+}
+
+
+
+/**
+* Orientacion (landscape - Horizontal)
+* min-width: 480px
+* max-width: 568px
+* iPhone
+*/
+@media only screen and (min-width: 480px) and (max-width: 568px) and (orientation: landscape) {
+	/*Seccion (00)*/
+}
+
+
+
+/**
+* Orientacion (portrait - Vertical)
+* max-width: 414px
+* Iphone 6 
+*/
+@media only screen and (max-width: 414px) and (orientation: portrait) {	
+	/*Seccion (00)*/
+}
+
+
+
+/**
+* Orientacion (landscape - Horizontal)
+* min-width: 385px
+* max-width: 480px
+* iPhone 3+4 
+*/
+@media only screen and (min-width: 385px) and (max-width: 480px) and (orientation: landscape) {
+	/*Seccion (00)*/	
+}
+
+
+
+/**
+* Smartphone
+* max-width: 384px
+* Android (Nexus 4)
+*/
+@media only screen and (max-width: 384px) {
+	/*Seccion (00)*/
+}
+
+
+
+/**
+* Orientacion (portrait - Vertical)
+* max-width: 384px
+* Android (Nexus 4)
+*/
+@media only screen and (max-width: 384px) and (orientation: portrait) {
+	/*Seccion (00)*/
+}
+
+
+
+
+
+
+
+/**
+* Orientacion (portrait - Vertical)
+* max-width: 375px
+* Iphone 6
+*/
+@media only screen and (max-width: 375px) and (orientation: portrait) {
+	/*Seccion (00)*/	
+}
+
+
+
+/**
+* Orientacion (portrait - Vertical)
+* max-width: 384px
+* Android (Nexus 4) - Iphone 5
+*/
+@media only screen and (max-width: 320px) and (orientation: portrait) {
+	/*Seccion (00)*/
+}
+
+
+/**
+* max-width: 320px
+*/
+@media only screen and (max-width: 320px) {
+	/*Seccion (00)*/	
+}
+
+
+
+
+/**
+* Orientacion (portrait - Vertical)
+* min-width: 240px 
+* max-width: 384px
+* Android (Nexus 4)  only screen and 
+*/
+@media only screen and (min-width: 240px) and (max-width: 384px) and (orientation: portrait) {
+	/*Seccion (00)*/
+}
