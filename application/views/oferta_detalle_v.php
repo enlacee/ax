@@ -19,7 +19,9 @@
                         </div>
                         
                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 xs580Max_width_100">
-                        	<input type="text" id="search" class="form-control" placeholder="Buscar...">
+                            <form action="<?php echo base_url() ?>" method="GET">
+                                <input type="text" id="search" name="q" class="form-control" placeholder="Buscar..." />
+                            </form>
                         </div>
                     </div>
                     

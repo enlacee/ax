@@ -23,7 +23,8 @@
                         </div>
                         
                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 xs580Max_width_100">
-                        	<input type="text" id="search" class="form-control" placeholder="Buscar...">
+                        	<input type="text" id="search" class="form-control" placeholder="Buscar..."
+                                value="<?php echo !empty($_GET['q']) ? $_GET['q'] : '' ?>">
                         </div>
                     </div>
                     
