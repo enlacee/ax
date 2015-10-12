@@ -96,34 +96,101 @@ a:visited {
 * True width resolution MAX 580px
 * True width resolution MIN 240px
 */
-.xs580Max_width_100 {
+@media (max-width: 684px) {
+
+	.xs684Max_width_100 {
+		width:100%;	
+	}
 	
-}
-
-.xs580Max_center {
+	.xs684Max_center {
+		text-align:center;	
+	}
 	
-}
-
-.xs580Max_mg0 {
-
-}
-
-.xs580Max_pd0 {
-
-}
-
-.xs580Max_border0 {
-
-}
-
-.xs580Max_mgTop10px {
+	.xs684Max_mg0 {
+		margin:0;
+	}
 	
+	.xs684Max_pd0 {
+		padding:0;
+	}
+	
+	.xs684Max_border0 {
+		border:0;
+	}
+	
+	.xs684Max_mgTop10px {
+		margin-top:10px;
+	}
+	
+	.xs684Max_mgBottom10px{
+		margin-bottom:10px;
+	}
+	/* End Styles Default*/
+
 }
 
-.xs580Max_mgBottom10px{
+@media (max-width: 580px) {
+
+	.xs580Max_width_100 {
+		width:100%;	
+	}
 	
+	.xs580Max_center {
+		text-align:center;	
+	}
+	
+	.xs580Max_mg0 {
+		margin:0;
+	}
+	
+	.xs580Max_pd0 {
+		padding:0;
+	}
+	
+	.xs580Max_border0 {
+		border:0;
+	}
+	
+	.xs580Max_mgTop10px {
+		margin-top:10px;
+	}
+	
+	.xs580Max_mgBottom10px{
+		margin-bottom:10px;
+	}
+	/* End Styles Default*/
+
 }
 
-.xs580Max_mgBottom10px{
+@media (max-width: 568px) {
+
+	.xs568Max_width_100 {
+		width:100%;	
+	}
 	
+	.xs568Max_center {
+		text-align:center;	
+	}
+	
+	.xs568Max_mg0 {
+		margin:0;
+	}
+	
+	.xs568Max_pd0 {
+		padding:0;
+	}
+	
+	.xs568Max_border0 {
+		border:0;
+	}
+	
+	.xs568Max_mgTop10px {
+		margin-top:10px;
+	}
+	
+	.xs568Max_mgBottom10px{
+		margin-bottom:10px;
+	}
+	/* End Styles Default*/
+
 }

@@ -89,10 +89,14 @@
                             <div class="item itemTagsJquery" item-tags="<?php echo $tags; ?>">
                             	<a href="<?php echo $url; ?>">
                                     <img src="/assets/images/banner/ofertas/<?php echo $row->image; ?>" class="img-responsive">
+                                    
+                                    <?php if( !empty( $row->resumen ) ): ?>
                                     <div class="infoAdvert">
                                         <h2 class="titleGlobal"><?php echo $row->title; ?></h2>
                                         <p><?php echo  character_limiter($row->resumen, 200); ?></p>
                                     </div>
+                                   <?php endif; ?>
+
                                 </a>
                             </div>
                               <?php endif; ?>                         
@@ -149,7 +153,12 @@
                       if( $actual >= $create && $actual <= $expira ):
                     ?> 
                     <div class="media-box <?php echo $tags; ?>" <?php echo $col; ?>>
-                        <a href="<?php echo $url; ?>" class="ctn">
+
+                        <?php if( empty( $row->external_link ) ): ?>
+                          <a href="<?php echo $url; ?>" class="ctn">
+                        <?php else: ?>
+                          <a href="<?php echo $row->external_link; ?>" target="_blank" class="ctn">
+                        <?php endif; ?>
 
                         <?php if( !empty($row->label_image) ): ?>
                         <div class="label">
@@ -158,10 +167,14 @@
                         <?php endif; ?>
 
                         	<img src="/assets/images/banner/ofertas/<?php echo $row->image; ?>" class="img-responsive">
-                            <div class="infoAdvert">
-                            	<h2 class="titleGlobal"><?php echo $row->title; ?></h2>
-                              <p><?php echo  character_limiter($row->resumen, 80); ?></p>
-                            </div>
+                            
+                          <?php if( !empty( $row->resumen ) ): ?>
+                          <div class="infoAdvert">
+                              <h2 class="titleGlobal"><?php echo $row->title; ?></h2>
+                            <p><?php echo  character_limiter($row->resumen, 80); ?></p>
+                          </div>
+                         <?php endif; ?>
+
                         </a>
                     </div>
                       <?php endif; ?>

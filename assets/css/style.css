@@ -105,8 +105,8 @@ body {
 }
 
 .head_2 .col_2 .menu_2 li {
-	margin:0 5px;
-	padding:30px 5px;
+	margin:0 -2px;
+	padding:30px 10px;
 	list-style:none;
 	display:inline-block;
 	font-size:13px;
@@ -193,6 +193,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	padding:16px 0;
 	position:relative;
 	margin-bottom:16px;
+}
+
+.head_3 input[type="text"] {
+	position: relative;
+}
+
+.head_3 input[type="text"]::-webkit-input-placeholder:before {
+	content: "\f002";
+	font-family: "FontAwesome";
+	font-weight: normal;
+	position: absolute;
+	top: 3px;
+	right: 10px;
+	font-size: 17px;
+	color: #999;
 }
 
 .head_3 h1 {
@@ -363,12 +378,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	display:block;
 	position: relative;
 	overflow:inherit;
-	border:4px solid #696969;
+	border: 5px solid #696969;
 	-webkit-transition: 0.3s all ease-in-out;
 	   -moz-transition: 0.3s all ease-in-out;
 	     -o-transition: 0.3s all ease-in-out;
 	    -ms-transition: 0.3s all ease-in-out;
 	        transition: 0.3s all ease-in-out;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
 }
 
 .ctnBody .ctn .label {
@@ -387,7 +405,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .ctnBody .ctn:hover {
-	border:4px solid #9D9D9D;
+	border: 5px solid #9D9D9D;
 }
 
 .ctnBody .ctn .infoAdvert {
@@ -508,6 +526,7 @@ box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.35);
 .box_right .ctn {
 	padding:15px;
 	color:#FFF;
+	background-color: #010101;
 }
 
 .box_right .ctn a {
@@ -919,39 +938,7 @@ box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.35);
 
 @media (max-width: 568px) {
 
-	/**
-	* Styles Default
-	* True width resolution MAX 580px
-	* True width resolution MIN 240px
-	*/
-	.xs580Max_width_100 {
-		width:100%;	
-	}
 	
-	.xs580Max_center {
-		text-align:center;	
-	}
-	
-	.xs580Max_mg0 {
-		margin:0;
-	}
-	
-	.xs580Max_pd0 {
-		padding:0;
-	}
-	
-	.xs580Max_border0 {
-		border:0;
-	}
-	
-	.xs580Max_mgTop10px {
-		margin-top:10px;
-	}
-	
-	.xs580Max_mgBottom10px{
-		margin-bottom:10px;
-	}
-	/* End Styles Default*/
 	
 	.head_1 .head_1_info ul {
 		text-align:center;
@@ -1285,4 +1272,67 @@ box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.35);
 */
 @media only screen and (min-width: 240px) and (max-width: 384px) and (orientation: portrait) {
 
+}
+
+
+
+
+
+
+/*Styles Container > row > div*/
+.container.base .row {
+	margin-right: -10px;
+  margin-left: -10px;
+}
+
+.container.base .row .col-lg-1, 
+.container.base .row .col-lg-10, 
+.container.base .row .col-lg-11, 
+.container.base .row .col-lg-12, 
+.container.base .row .col-lg-2, 
+.container.base .row .col-lg-3, 
+.container.base .row .col-lg-4, 
+.container.base .row .col-lg-5, 
+.container.base .row .col-lg-6, 
+.container.base .row .col-lg-7, 
+.container.base .row .col-lg-8, 
+.container.base .row .col-lg-9, 
+.container.base .row .col-md-1, 
+.container.base .row .col-md-10, 
+.container.base .row .col-md-11, 
+.container.base .row .col-md-12, 
+.container.base .row .col-md-2, 
+.container.base .row .col-md-3, 
+.container.base .row .col-md-4, 
+.container.base .row .col-md-5, 
+.container.base .row .col-md-6, 
+.container.base .row .col-md-7, 
+.container.base .row .col-md-8, 
+.container.base .row .col-md-9, 
+.container.base .row .col-sm-1, 
+.container.base .row .col-sm-10, 
+.container.base .row .col-sm-11, 
+.container.base .row .col-sm-12, 
+.container.base .row .col-sm-2, 
+.container.base .row .col-sm-3, 
+.container.base .row .col-sm-4, 
+.container.base .row .col-sm-5, 
+.container.base .row .col-sm-6, 
+.container.base .row .col-sm-7, 
+.container.base .row .col-sm-8, 
+.container.base .row .col-sm-9, 
+.container.base .row .col-xs-1, 
+.container.base .row .col-xs-10, 
+.container.base .row .col-xs-11, 
+.container.base .row .col-xs-12, 
+.container.base .row .col-xs-2, 
+.container.base .row .col-xs-3, 
+.container.base .row .col-xs-4, 
+.container.base .row .col-xs-5, 
+.container.base .row .col-xs-6, 
+.container.base .row .col-xs-7, 
+.container.base .row .col-xs-8, 
+.container.base .row .col-xs-9 {
+	padding-right: 10px;
+  padding-left: 10px;
 }

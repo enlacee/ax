@@ -93,6 +93,7 @@
                         <textarea name="resumen" id="resumen" class="form-control" cols="30" rows="3" maxlength="200"><?php echo $oferta->resumen; ?></textarea>
                         <div id="contador"></div>
                       </div>
+                      <div class="alert alert-danger"><strong>Nota: </strong>Si este campo lo deja en blanco, el resumen de esta oferta no se mostrará sobre la imagén.</div>
                     </td>
                   </tr>
 
@@ -159,23 +160,47 @@
                         </div>
                       </div>
                     </td>
-                  </tr>
+                  </tr>                  
 
                   <tr>
-                    <td><span>Titulo&nbsp;oferta&nbsp;lateral:</span></td>
+                    <td><span>Términos&nbsp;y&nbsp;condiciones:</span></td>
                     <td>
                       <div class="form-group">
-                        <input type="text" value="<?php echo $oferta->bar_offert_title; ?>" class="form-control" id="bar_offert_title" name="bar_offert_title" placeholder="Ingrese titulo de la oferta">
+                        <textarea name="terms" id="terms"  class="form-control" cols="30" rows="10"><?php echo $oferta->terms; ?></textarea>
                       </div>
                     </td>
                   </tr>
 
                   <tr>
-                    <td><span>Descripci&oacute;n&nbsp;oferta&nbsp;lateral:</span></td>
+                    <td><span>Enlace externo:</span></td>
                     <td>
                       <div class="form-group">
-                        <textarea name="bar_offert_description" id="bar_offert_description" class="form-control" cols="30" rows="3" maxlength="200"><?php echo $oferta->bar_offert_description; ?></textarea>
+                        <input type="text" class="form-control" id="external_link" name="external_link" value="<?php echo $oferta->external_link; ?>" placeholder="Ingrese el enlace externo de la oferta">
                       </div>
+                      <div class="alert alert-danger"><strong>Nota: </strong> Debe ingresar el enlace externo completo, ejemplo: https://www.pagina.com/oferta/ejemplo/link.php?completo=1</div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <span>Oferta: <span class="label label-info">BARRA LATERAL #1</span></span>                      
+                    </td>
+                    <td>
+
+                      <p>Titulo:</p>
+                      <p>
+                        <div class="form-group">
+                          <input type="text" value="<?php echo $oferta->bar_offert_title; ?>" class="form-control" id="bar_offert_title" name="bar_offert_title" placeholder="Ingrese titulo de la oferta">
+                        </div>
+                      </p>
+
+                      <p>Detalle:</p>
+                      <p>
+                        <div class="form-group">
+                          <textarea name="bar_offert_description" id="bar_offert_description" class="form-control" cols="30" rows="5" maxlength="200"><?php echo $oferta->bar_offert_description; ?></textarea>
+                        </div>
+                      </p>  
+
                     </td>
                   </tr>
 
@@ -240,6 +265,24 @@
 
 //Star validation
 $(document).ready(function() {
+
+    //Start editor HTLM
+    tinymce.init({
+        selector: "#description",
+        plugins: "link",
+     });
+
+    //Start editor HTLM
+    tinymce.init({
+        selector: "#terms",
+        plugins: "link",
+     });
+
+    //Start editor HTLM
+    tinymce.init({
+        selector: "#bar_offert_description",
+        plugins: "link",
+     });
 
     //Funciones para cambiar imagen
     $('#update_imagen_btn').on('click', function(event) {
@@ -370,11 +413,7 @@ $(document).ready(function() {
             },
             resumen: {
                 validators: {
-                    notEmpty: {
-                        message: 'Obligatorio!'
-                    },
                     stringLength: {
-                        min: 150,
                         max: 200,
                         message: 'Ingrese entre 150 y 200 carácteres.'
                     }
@@ -404,11 +443,6 @@ $(document).ready(function() {
     });
 });
 
-//Start editor HTLM
-tinymce.init({
-    selector: "#description",
-    plugins: "link",
- });
 </script>
 
 </body>
