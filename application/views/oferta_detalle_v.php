@@ -46,7 +46,7 @@
 <div class="container">
 	<div class="row">
     	<div class="col-xs-12">
-        	<span class="breadcrumbs">Todas las ofertas / Compras / Nombre de la oferta</span>
+        	<span class="breadcrumbs"> <a class="" href="<?php echo base_url('?filter=1') ?>">Todas las ofertas</a> / <a href="<?php echo base_url('?filter=3') ?>">Compras</a> / <?php echo !empty($detalle->title) ? $detalle->title : '' ?></span>
         </div>
     </div>
 </div>
