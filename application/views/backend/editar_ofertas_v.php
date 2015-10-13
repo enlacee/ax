@@ -68,8 +68,9 @@
                       <div class="checkbox">
                         <div class="form-group">
                           <ul>
-                            <li class="text2"><input type="checkbox" name="social[]" value="twitter" <?php echo (!empty($oferta->twitter) && $oferta->twitter == 1) ? 'checked' : '' ?> />twitter</li> 
-                            <li class="text1"><input type="checkbox" name="social[]" value="facebook" <?php echo (!empty($oferta->facebook) && $oferta->facebook == 1) ? 'checked' : '' ?>>facebook</li>
+                            <li class="text2">
+                              <input type="checkbox" name="share" value="1" <?php echo (!empty($oferta->share) && $oferta->share == 1) ? 'checked' : '' ?>>
+                            </li>
                           </ul>
                         </div>
                       </div>

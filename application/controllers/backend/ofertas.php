@@ -133,6 +133,7 @@ class Ofertas extends CI_Controller {
 												'link' 										=> '#',
 												'terms' 									=> $this->input->post('terms'),
 												'external_link' 					=> $this->input->post('external_link'),
+												'share' => !empty($this->input->post('share')) ? true : false,
 												'facebook' 								=> '#',
 												'twitter' 								=> '#',
 												'youtube' 								=> '#',
@@ -250,8 +251,9 @@ class Ofertas extends CI_Controller {
                             'link' 							=> '#',
                             'terms' 						=> $this->input->post('terms'),
                             'external_link' 		=> $this->input->post('external_link'),
-                            'facebook' 					=> $this->getDataInputSocial($this->input->post('social'), self::SOCIAL_FACEBOOK),
-                            'twitter' 					=> $this->getDataInputSocial($this->input->post('social'), self::SOCIAL_TWITTER),
+                            'share' => !empty($this->input->post('share')) ? true : false,
+                            'facebook' 					=> '#',
+                            'twitter' 					=> '#',
                             'youtube' 					=> '#',
                             'bar_offert_title'				=> $this->input->post('bar_offert_title'),
                             'bar_offert_description'	=> $this->input->post('bar_offert_description'),
@@ -295,8 +297,9 @@ class Ofertas extends CI_Controller {
                             'link' 							=> '#',
                             'terms' 						=> $this->input->post('terms'),
                             'external_link' 		=> $this->input->post('external_link'),
-                            'facebook' 					=> $this->getDataInputSocial($this->input->post('social'), self::SOCIAL_FACEBOOK),
-                            'twitter' 					=> $this->getDataInputSocial($this->input->post('social'), self::SOCIAL_TWITTER),
+                            'share' => !empty($this->input->post('share')) ? true : false,
+                            'facebook' 					=> '#',
+                            'twitter' 					=> '#',
                             'youtube' 					=> '#',
                             'bar_offert_title'				=> $this->input->post('bar_offert_title'),
                             'bar_offert_description'	=> $this->input->post('bar_offert_description'),
@@ -317,16 +320,5 @@ class Ofertas extends CI_Controller {
 		}
 	}
     
-    
-    private function getDataInputSocial($post, $nameSocial) {
-        if (is_array($post) && !empty($nameSocial)) {
-            foreach ($post as $key => $value) {
-                if ($value == $nameSocial) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
 
 }

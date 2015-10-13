@@ -63,13 +63,12 @@
                   </tr>
                   
                   <tr>
-                    <td><span>Compartir con:</span></td>
+                    <td><span>Compartir:</span></td>
                     <td>
                       <div class="checkbox">
                         <div class="form-group">
                           <ul>
-                            <li class="text2"><input type="checkbox" name="social[]" value="twitter">twitter</li> 
-                            <li class="text1"><input type="checkbox" name="social[]" value="facebook">facebook</li>
+                            <li class="text2"><input type="checkbox" name="share" value="1"></li>
                           </ul>
                         </div>
                       </div>
