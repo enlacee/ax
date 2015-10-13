@@ -11,10 +11,14 @@
                 	<div class="row">
                     	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 xs580Max_width_100 xs580Max_center">
                         	<ul class="media-boxes-filter" id="filter">
-                            <li class="xs580Max_center"><a href="#" data-filter="*" class="selected"><i><img src="/assets/images/icon/menu-icon-offers.png" width="34" height="30"></i>Todas las ofertas</a></li>
-                            <li class="xs580Max_center"><a href="#" data-filter=".viajes"><i><img src="/assets/images/icon/menu-icon-travel-2-.png" width="34" height="30"></i>Viajes</a></li>
-                            <li class="xs580Max_center"><a href="#" data-filter=".compras"><i><img src="/assets/images/icon/menu-icon-shopping-2-.png" width="34" height="30"></i>Compras</a></li>
-                            <li class="xs580Max_center"><a href="#" data-filter=".otros"><i><img src="/assets/images/icon/menu-icon-dining-2-.png" width="34" height="30"></i>Otros</a></li>
+                            <li class="xs580Max_center">
+                                <a href="<?php echo base_url('?filter=1') ?>" data-filter="*" class="selected"><i><img src="/assets/images/icon/menu-icon-offers.png" width="34" height="30"></i>Todas las ofertas</a></li>
+                            <li class="xs580Max_center">
+                                <a href="<?php echo base_url('?filter=2') ?>" data-filter=".viajes"><i><img src="/assets/images/icon/menu-icon-travel-2-.png" width="34" height="30"></i>Viajes</a></li>
+                            <li class="xs580Max_center">
+                                <a href="<?php echo base_url('?filter=3') ?>" data-filter=".compras"><i><img src="/assets/images/icon/menu-icon-shopping-2-.png" width="34" height="30"></i>Compras</a></li>
+                            <li class="xs580Max_center">
+                                <a href="<?php echo base_url('?filter=4') ?>" data-filter=".otros"><i><img src="/assets/images/icon/menu-icon-dining-2-.png" width="34" height="30"></i>Otros</a></li>
                           </ul>
                         </div>
                         

@@ -200,6 +200,13 @@ $(function(){
 });
 
 </script>
-
+<?php if (!empty($_GET['filter'])): ?>
+<script type="text/javascript">
+    $(function(){
+        var id = '#filter-'+<?php echo $_GET['filter']?>;
+        $(id).click();
+    });
+</script>
+<?php endif; ?>
 </body>
 </html>
