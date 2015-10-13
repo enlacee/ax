@@ -1,8 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Ofertas extends CI_Controller {
+    
+    const SOCIAL_TWITTER = 'twitter';
+    const SOCIAL_FACEBOOK = 'facebook';
 
-	public function __construct() {
+    public function __construct() {
 		parent:: __construct();
 		$this->load->model('backend/ofertas_m');
 	}	
@@ -180,7 +183,8 @@ class Ofertas extends CI_Controller {
 
   	//Get ID desde la URL
   	$id = $this->security->xss_clean( strip_tags( $this->uri->segment(4) ) );
-		$data['oferta'] = $this->ofertas_m->get_info_editar_ofertas($id);
+    $rsOferta = $this->ofertas_m->get_info_editar_ofertas($id);
+    $data['oferta'] = ($rsOferta == false) ? new stdClass() : $rsOferta;
 
 		$this->load->view('theme/backend/head_top');
 		$this->load->view('theme/backend/head_middle');
@@ -192,7 +196,7 @@ class Ofertas extends CI_Controller {
 		 * (Send Form)
 		 * Si se envía el formulario 
 		 */
-		if( array_key_exists('update_btn', $_POST) ) {
+		if( array_key_exists('update_btn', $_POST) ) { 
 			
 			//Si el usuario actualiza la imagen
 			if($_FILES['image']['size'] > 0) {
@@ -216,8 +220,7 @@ class Ofertas extends CI_Controller {
 					$this->load->view('theme/backend/head_middle');
 					$this->load->view('theme/backend/head_bottom');
 					$this->load->view('backend/editar_ofertas_v', $datos);
-		    } 
-		    else {
+		    } else {
 		      $nombre = $this->upload->data();
 		      $datos['nombre']  = $nombre['file_name'];
 		      $datos['titulo'] = "Upload file completed!";
@@ -235,30 +238,30 @@ class Ofertas extends CI_Controller {
 						$category = explode("-",$category);
 
 						$data = array (
-														'id_category' 			=> $category[0],
-														'name_category'			=> $category[1],
-														'tags'							=> implode(",", $this->input->post('tags') ),
-														'label_image'				=> $this->input->post('label'),
-														'title'							=> $this->input->post('title'),
-														'resumen'						=> $this->input->post('resumen'),
-														'description'				=> $this->input->post('description'),
-														'image'							=> $nombre['file_name'],
-														'type'							=> $this->input->post('type_anuncio'),
-														'link' 							=> '#',
-														'terms' 						=> $this->input->post('terms'),
-														'external_link' 		=> $this->input->post('external_link'),
-														'facebook' 					=> '#',
-														'twitter' 					=> '#',
-														'youtube' 					=> '#',
-														'bar_offert_title'				=> $this->input->post('bar_offert_title'),
-														'bar_offert_description'	=> $this->input->post('bar_offert_description'),
-														'create'						=> $this->input->post('create'),
-														'create_strtotime'	=> strtotime( $this->input->post('create') ),
-														'expira'						=> $this->input->post('expira'),
-														'expira_strtotime'	=> strtotime( $this->input->post('expira') ),
-														'update'						=> '0000-00-00 00:00:00',
-														'status' 						=> '1'
-													);
+                            'id_category' 			=> $category[0],
+                            'name_category'			=> $category[1],
+                            'tags'							=> implode(",", $this->input->post('tags') ),
+                            'label_image'				=> $this->input->post('label'),
+                            'title'							=> $this->input->post('title'),
+                            'resumen'						=> $this->input->post('resumen'),
+                            'description'				=> $this->input->post('description'),
+                            'image'							=> $nombre['file_name'],
+                            'type'							=> $this->input->post('type_anuncio'),
+                            'link' 							=> '#',
+                            'terms' 						=> $this->input->post('terms'),
+                            'external_link' 		=> $this->input->post('external_link'),
+                            'facebook' 					=> $this->getDataInputSocial($this->input->post('social'), self::SOCIAL_FACEBOOK),
+                            'twitter' 					=> $this->getDataInputSocial($this->input->post('social'), self::SOCIAL_TWITTER),
+                            'youtube' 					=> '#',
+                            'bar_offert_title'				=> $this->input->post('bar_offert_title'),
+                            'bar_offert_description'	=> $this->input->post('bar_offert_description'),
+                            'create'						=> $this->input->post('create'),
+                            'create_strtotime'	=> strtotime( $this->input->post('create') ),
+                            'expira'						=> $this->input->post('expira'),
+                            'expira_strtotime'	=> strtotime( $this->input->post('expira') ),
+                            'update'						=> '0000-00-00 00:00:00',
+                            'status' 						=> '1'
+                        );
 						
 						//Get ID desde la URL
   					$id = $this->security->xss_clean( strip_tags( $this->uri->segment(4) ) );
@@ -281,29 +284,29 @@ class Ofertas extends CI_Controller {
 						$fecha = $this->input->post('create');
 
 						$data = array (
-														'id_category' 			=> $category[0],
-														'name_category'			=> $category[1],
-														'tags'							=> implode(",", $this->input->post('tags') ),
-														'label_image'				=> $this->input->post('label'),
-														'title'							=> $this->input->post('title'),
-														'resumen'						=> $this->input->post('resumen'),
-														'description'				=> $this->input->post('description'),
-														'type'							=> $this->input->post('type_anuncio'),
-														'link' 							=> '#',
-														'terms' 						=> $this->input->post('terms'),
-														'external_link' 		=> $this->input->post('external_link'),
-														'facebook' 					=> '#',
-														'twitter' 					=> '#',
-														'youtube' 					=> '#',
-														'bar_offert_title'				=> $this->input->post('bar_offert_title'),
-														'bar_offert_description'	=> $this->input->post('bar_offert_description'),
-														'create'						=> $fecha,
-														'create_strtotime'	=> strtotime( $fecha ),
-														'expira'						=> $this->input->post('expira'),
-														'expira_strtotime'	=> strtotime( $this->input->post('expira') ),
-														'update'						=> '0000-00-00 00:00:00',
-														'status' 						=> '1'
-													);
+                            'id_category' 			=> $category[0],
+                            'name_category'			=> $category[1],
+                            'tags'							=> implode(",", $this->input->post('tags') ),
+                            'label_image'				=> $this->input->post('label'),
+                            'title'							=> $this->input->post('title'),
+                            'resumen'						=> $this->input->post('resumen'),
+                            'description'				=> $this->input->post('description'),
+                            'type'							=> $this->input->post('type_anuncio'),
+                            'link' 							=> '#',
+                            'terms' 						=> $this->input->post('terms'),
+                            'external_link' 		=> $this->input->post('external_link'),
+                            'facebook' 					=> $this->getDataInputSocial($this->input->post('social'), self::SOCIAL_FACEBOOK),
+                            'twitter' 					=> $this->getDataInputSocial($this->input->post('social'), self::SOCIAL_TWITTER),
+                            'youtube' 					=> '#',
+                            'bar_offert_title'				=> $this->input->post('bar_offert_title'),
+                            'bar_offert_description'	=> $this->input->post('bar_offert_description'),
+                            'create'						=> $fecha,
+                            'create_strtotime'	=> strtotime( $fecha ),
+                            'expira'						=> $this->input->post('expira'),
+                            'expira_strtotime'	=> strtotime( $this->input->post('expira') ),
+                            'update'						=> '0000-00-00 00:00:00',
+                            'status' 						=> '1'
+                        );
 						
 						//Get ID desde la URL
   					$id = $this->security->xss_clean( strip_tags( $this->uri->segment(4) ) );
@@ -313,5 +316,17 @@ class Ofertas extends CI_Controller {
 				}
 		}
 	}
+    
+    
+    private function getDataInputSocial($post, $nameSocial) {
+        if (is_array($post) && !empty($nameSocial)) {
+            foreach ($post as $key => $value) {
+                if ($value == $nameSocial) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
 }

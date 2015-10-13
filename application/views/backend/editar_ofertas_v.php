@@ -62,6 +62,20 @@
                     </td>
                   </tr>
 
+                  <tr>
+                    <td><span>Compartir con:</span></td>
+                    <td>
+                      <div class="checkbox">
+                        <div class="form-group">
+                          <ul>
+                            <li class="text2"><input type="checkbox" name="social[]" value="twitter" <?php echo (!empty($oferta->twitter) && $oferta->twitter == 1) ? 'checked' : '' ?> />twitter</li> 
+                            <li class="text1"><input type="checkbox" name="social[]" value="facebook" <?php echo (!empty($oferta->facebook) && $oferta->facebook == 1) ? 'checked' : '' ?>>facebook</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  
                   <tr id="label_td">
                     <td><span>Label:</span></td>
                     <td>
@@ -166,7 +180,7 @@
                     <td><span>Términos&nbsp;y&nbsp;condiciones:</span></td>
                     <td>
                       <div class="form-group">
-                        <textarea name="terms" id="terms"  class="form-control" cols="30" rows="10"><?php echo $oferta->terms; ?></textarea>
+                          <textarea name="terms" id="terms"  class="form-control" cols="30" rows="10"><?php echo !empty($oferta->terms) ? $oferta->terms : ''; ?></textarea>
                       </div>
                     </td>
                   </tr>
@@ -175,7 +189,7 @@
                     <td><span>Enlace externo:</span></td>
                     <td>
                       <div class="form-group">
-                        <input type="text" class="form-control" id="external_link" name="external_link" value="<?php echo $oferta->external_link; ?>" placeholder="Ingrese el enlace externo de la oferta">
+                          <input type="text" class="form-control" id="external_link" name="external_link" value="<?php echo !empty($oferta->external_link) ? $oferta->external_link : ''; ?>" placeholder="Ingrese el enlace externo de la oferta">
                       </div>
                       <div class="alert alert-danger"><strong>Nota: </strong> Debe ingresar el enlace externo completo, ejemplo: https://www.pagina.com/oferta/ejemplo/link.php?completo=1</div>
                     </td>

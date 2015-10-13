@@ -82,6 +82,7 @@
                                 
                             <div class="col-xs-6 col-sm-6 col-md-8 col-lg-6 col_2">
                             	<ul class="redes">
+                                <?php if (!empty($detalle->facebook) && $detalle->facebook == 1): ?>
                               	<li class="facebook">
                                     <div id="fb-root"></div>
                                     <script>(function(d, s, id) {
@@ -93,12 +94,16 @@
                                     }(document, 'script', 'facebook-jssdk'));</script>
                                     <div class="fb-like" data-href="<?= "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']; ?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
                                 </li>
+                                <?php endif; ?>
+                                
+                                <?php if (!empty($detalle->twitter) && $detalle->twitter == 1): ?>
                                 <li class="twiter">
                                 	<div class="ctnTwitter">
                                     <a href="https://twitter.com/share" class="twitter-share-button" data-via="twitter" data-lang="es">Twittear</a>
                                     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-							                     </div>
+                                    </div>
                                 </li>
+                                <?php endif; ?>
                               	<li>
                                 	<a href="#">
                                     <i class="fa fa-envelope"></i>
