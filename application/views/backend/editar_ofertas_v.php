@@ -51,7 +51,7 @@
                     <td>
                       <div class="checkbox">
                         <div class="form-group">
-                          <ul><?php var_dump(array_search('viajes',$oferta->tags)) ?>
+                          <ul>
                             <li class="text2"><input type="checkbox" name="tags[]" value="all"
                               <?php echo (!empty($oferta->tags) && is_int(array_search('all',$oferta->tags))) ? 'checked' : '' ?>>all</li> 
                             <li class="text1"><input type="checkbox" name="tags[]" value="compras"
