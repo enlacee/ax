@@ -67,9 +67,9 @@
               </div>
               <!--End Box-->
                 
-                
-              <?php if (!empty($detalle->share) && $detalle->share == 1): ?>
-                <!--Box-->
+              
+              <?php if( $detalle->share == 1 ): ?>
+              <!--Box-->
             	<div class="box_left socialweb">
                     <div class="ctn">
                     	<div class="ctnLeft">
@@ -82,7 +82,8 @@
                             </div>
                                 
                             <div class="col-xs-6 col-sm-6 col-md-8 col-lg-6 col_2">
-                            	<ul class="redes">                                
+                            	<ul class="redes">
+                                
                               	<li class="facebook">
                                     <div id="fb-root"></div>
                                     <script>(function(d, s, id) {
@@ -93,7 +94,7 @@
                                       fjs.parentNode.insertBefore(js, fjs);
                                     }(document, 'script', 'facebook-jssdk'));</script>
                                     <div class="fb-like" data-href="<?= "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']; ?>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-                                </li>                                
+                                </li>
                                 
                                 <li class="twiter">
                                 	<div class="ctnTwitter">
