@@ -121,31 +121,31 @@ class Ofertas extends CI_Controller {
 				$category = explode("-",$category);
 
 				$data = array (
-												'id_category' 						=> $category[0],
-												'name_category'						=> $category[1],
-												'tags'										=> implode(",", $this->input->post('tags') ),
-												'label_image'							=> $this->input->post('label'),
-												'title'										=> $this->input->post('title'),
-												'resumen'									=> $this->input->post('resumen'),
-												'description'							=> $this->input->post('description'),
-												'image'										=> $nombre['file_name'],
-												'type'										=> $this->input->post('type_anuncio'),
-												'link' 										=> '#',
-												'terms' 									=> $this->input->post('terms'),
-												'external_link' 					=> $this->input->post('external_link'),
-												'share' => !empty($this->input->post('share')) ? true : false,
-												'facebook' 								=> '#',
-												'twitter' 								=> '#',
-												'youtube' 								=> '#',
-												'bar_offert_title'				=> $this->input->post('bar_offert_title'),
-												'bar_offert_description'	=> $this->input->post('bar_offert_description'),
-												'create'									=> $this->input->post('create'),
-												'create_strtotime'				=> strtotime( $this->input->post('create') ),
-												'expira'									=> $this->input->post('expira'),
-												'expira_strtotime'				=> strtotime( $this->input->post('expira') ),
-												'update'									=> '0000-00-00 00:00:00',
-												'status' 									=> '1'
-											);			
+					'id_category' 						=> $category[0],
+					'name_category'						=> $category[1],
+					'tags'=> implode(",", $this->input->post('tags') ),
+					'label_image'							=> $this->input->post('label'),
+					'title'										=> $this->input->post('title'),
+					'resumen'									=> $this->input->post('resumen'),
+					'description'							=> $this->input->post('description'),
+					'image'										=> $nombre['file_name'],
+					'type'										=> $this->input->post('type_anuncio'),
+					'link' 										=> '#',
+					'terms' 									=> $this->input->post('terms'),
+					'external_link' 					=> $this->input->post('external_link'),
+					'share' => !empty($this->input->post('share')) ? true : false,
+					'facebook' 								=> '#',
+					'twitter' 								=> '#',
+					'youtube' 								=> '#',
+					'bar_offert_title'				=> $this->input->post('bar_offert_title'),
+					'bar_offert_description'	=> $this->input->post('bar_offert_description'),
+					'create'									=> $this->input->post('create'),
+					'create_strtotime'				=> strtotime( $this->input->post('create') ),
+					'expira'									=> $this->input->post('expira'),
+					'expira_strtotime'				=> strtotime( $this->input->post('expira') ),
+					'update'									=> '0000-00-00 00:00:00',
+					'status' 									=> '1'
+				);			
 				//echo "<pre>"; print_r( $this->input->post() );
 				$this->ofertas_m->insert_oferta($data);
 				header('Location: /backend');
@@ -172,20 +172,23 @@ class Ofertas extends CI_Controller {
 	public function update_ofertas()
 	{
 		//Comprobamos que el usuario haya iniciado sesión
-  	if( !$this->session->userdata('login') ) {
-  		redirect('/admin/login', 'refresh');
-  	}
+		if( !$this->session->userdata('login') ) {
+			redirect('/admin/login', 'refresh');
+		}
 
-  	//Muestra todas las categorias de la base de datos
-  	$data['category'] = $this->ofertas_m->get_category();
+		//Muestra todas las categorias de la base de datos
+		$data['category'] = $this->ofertas_m->get_category();
 
-  	//Get all label
+		//Get all label
 		$data["label"] = $this->ofertas_m->get_label();
 
-  	//Get ID desde la URL
-  	$id = $this->security->xss_clean( strip_tags( $this->uri->segment(4) ) );
-    $rsOferta = $this->ofertas_m->get_info_editar_ofertas($id);
-    $data['oferta'] = ($rsOferta == false) ? new stdClass() : $rsOferta;
+		//Get ID desde la URL
+		$id = $this->security->xss_clean( strip_tags( $this->uri->segment(4) ) );
+		$rsOferta = $this->ofertas_m->get_info_editar_ofertas($id);
+		$data['oferta'] = ($rsOferta == false) ? new stdClass() : $rsOferta;
+		if ($rsOferta != false) {
+			$data['oferta']->tags = explode(',', $data['oferta']->tags);
+		}
 
 		$this->load->view('theme/backend/head_top');
 		$this->load->view('theme/backend/head_middle');
@@ -241,7 +244,7 @@ class Ofertas extends CI_Controller {
 						$data = array (
                             'id_category' 			=> $category[0],
                             'name_category'			=> $category[1],
-                            'tags'							=> implode(",", $this->input->post('tags') ),
+                            'tags'=> implode(",", $this->input->post('tags') ),
                             'label_image'				=> $this->input->post('label'),
                             'title'							=> $this->input->post('title'),
                             'resumen'						=> $this->input->post('resumen'),
@@ -288,7 +291,7 @@ class Ofertas extends CI_Controller {
 						$data = array (
                             'id_category' 			=> $category[0],
                             'name_category'			=> $category[1],
-                            'tags'							=> implode(",", $this->input->post('tags') ),
+                            'tags'=> implode(",", $this->input->post('tags') ),
                             'label_image'				=> $this->input->post('label'),
                             'title'							=> $this->input->post('title'),
                             'resumen'						=> $this->input->post('resumen'),
