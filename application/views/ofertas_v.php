@@ -60,9 +60,7 @@
 			 <div class="col-xs-12">
 
 
-              <div id="grid"> 
-
-
+              <div id="grid">
                   <?php if($slider !== FALSE): ?>
                   <!--Slider-->
                   <div id="item-tags" class="media-box" data-columns="2">
@@ -71,9 +69,7 @@
                         
                           <!-- Wrapper for slides -->
                           <div class="carousel-inner">
-                            
-                            <?php 
-                              foreach( $slider as $row ): 
+                            <?php foreach( $slider as $row ): 
                               $url  = "/ofertas/";
                               $url .= $row->name_category . "/";
                               $url .= $row->id;
@@ -84,16 +80,6 @@
                                * Jquery se lo pasamos al item principal para filtrarlo en el buscador
                                */
                               $tags = str_replace(',', '', $row->tags);
-
-                              /**
-                               * Mostramos ofertas filtradas
-                               * Entre fechas válidas 
-                               */
-                              date_default_timezone_set('GMT');
-                              $actual = time();
-                              $create = $row->create_strtotime;
-                              $expira = $row->expira_strtotime;
-                              if($actual >= $create && $actual <= $expira):
                             ?>
                             <div class="item itemTagsJquery" item-tags="<?php echo $tags; ?>">
                             	<a href="<?php echo $url; ?>">
@@ -107,10 +93,8 @@
                                    <?php endif; ?>
 
                                 </a>
-                            </div>
-                              <?php endif; ?>                         
+                            </div>                       
                             <?php endforeach; ?> 
-
                           </div>
                         
                           <!-- Controls -->
@@ -130,9 +114,7 @@
 
 
                   <?php if($ofertas !== FALSE): ?>
-                    <?php 
-                      foreach($ofertas as $row): 
-                      
+                    <?php foreach($ofertas as $row): 
                       //Definimos la URL
                       $url  = "/ofertas/";
                       $url .= $row->name_category . "/";
@@ -150,17 +132,7 @@
                         default:
                           $col = "";
                           break;
-                      }
-
-                      /**
-                       * Mostramos ofertas filtradas
-                       * Entre fechas válidas 
-                       */
-                      $actual = strtotime( date('Y-m-d H:i:s') );
-                      $create = $row->create_strtotime;
-                      $expira = $row->expira_strtotime;
-                      if( $actual >= $create && $actual <= $expira ):
-                    ?> 
+                      } ?> 
                     <div class="media-box <?php echo $tags; ?>" <?php echo $col; ?>>
 
                         <?php if( empty( $row->external_link ) ): ?>
@@ -186,9 +158,8 @@
 
                         </a>
                     </div>
-                      <?php endif; ?>
                     <?php endforeach; ?>
-                  <?php endif; ?>
+                <?php endif; ?>
 
               </div>
 

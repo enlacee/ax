@@ -134,7 +134,7 @@
                     <td>
                       <div class="form-group">
                         <select name="type_anuncio" id="type_anuncio" class="form-control">
-                          <option value="">No seleccionar</option>
+                          <option value="" selected >No seleccionar</option>
                           <option value="standart">Estandar (1 Columna)</option>
                           <option value="special">Especial (2 Columnas)</option>
                           <option value="slider">Slider (Banner principal)</option>

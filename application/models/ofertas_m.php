@@ -6,41 +6,47 @@ class Ofertas_m extends CI_Model {
 		parent:: __construct();
 	}
 
-	//Get all slider
+	/**
+	* Filtrar ofertas Slider solo se mostrarán
+	* fecha inicio : o.create
+	* fecha fin : o.expira
+	*/
 	public function get_slider()
 	{
 		$this->db->where('status', '1');
 		$condiciones = array('slider');
 		$this->db->where_in('name_category', $condiciones);
-
+		$this->db->where("NOW() >= o.create");
+		$this->db->where("NOW() <= o.expira");
 		$this->db->order_by('id', 'desc');
-		$query = $this->db->get('ofertas');
+		$query = $this->db->get('ofertas AS o');
 
 		if( $query->num_rows() > 0 ) {
-
 			return $query->result();
-		} 
-		else {
+		} else {
 			return false;
 		}
 	}
 
 
-	//Get all ofertas
+	/**
+	* Filtrar ofertas solo se mostrarán
+	* fecha inicio : o.create
+	* fecha fin : o.expira
+	*/
 	public function get_ofertas()
 	{
 		$this->db->where('status', '1');
 		$condiciones = array('standart', 'special');
 		$this->db->where_in('type', $condiciones);
-
+		$this->db->where("NOW() >= o.create");
+		$this->db->where("NOW() <= o.expira");
 		$this->db->order_by('id', 'desc');
-		$query = $this->db->get('ofertas');
+		$query = $this->db->get('ofertas AS o');
 
 		if( $query->num_rows() > 0 ) {
-
 			return $query->result();
-		} 
-		else {
+		} else {
 			return false;
 		}
 	}

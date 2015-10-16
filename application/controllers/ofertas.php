@@ -13,8 +13,6 @@ class Ofertas extends CI_Controller {
 	{
 		//Get all slider
 		$datos['slider'] = $this->ofertas_m->get_slider();
-
-		//Get all Ofertas
 		$datos['ofertas'] = $this->ofertas_m->get_ofertas();
 
 		$this->load->view('theme/front-end/header.php');

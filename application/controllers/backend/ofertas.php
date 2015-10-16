@@ -64,54 +64,31 @@ class Ofertas extends CI_Controller {
 	{
 		//$this->output->enable_profiler(TRUE);
 		//Comprobamos que se envio el formulario
-  	if( !$this->session->userdata('login') ) {
-  		redirect('/admin/login', 'refresh');
-  	}
-
-  	//Get all category
-		$data['category'] = $this->ofertas_m->get_category();
-
-		//Get all label
-		$data["label"] = $this->ofertas_m->get_label();
-
-		$this->load->view('theme/backend/head_top');
-		$this->load->view('theme/backend/head_middle');
-		$this->load->view('theme/backend/head_bottom');
-		$this->load->view('backend/add_ofertas_v', $data);
+		if( !$this->session->userdata('login') ) {
+			redirect('/admin/login', 'refresh');
+		}
 
 		if( array_key_exists('agregar', $_POST) ) {
 
-		//Subimos la imagen
-		$config = array(
-	                'upload_path'   => './assets/images/banner/ofertas/',
-	                'allowed_types' => 'jpg|png|jpeg|gif',
-	                'overwrite'     => FALSE,
-	                'max_size'      => 2000,
-	                'encrypt_name'  => 50
-	                );
-		//Cargamos la libreria
-    $this->load->library('upload', $config);
 
+			//Cargamos la libreria +subir imagen+
+			$config = array(
+				'upload_path'   => './assets/images/banner/ofertas/',
+				'allowed_types' => 'jpg|png|jpeg|gif',
+				'overwrite'     => FALSE,
+				'max_size'      => 2000,
+				'encrypt_name'  => 50
+			);
+    		$this->load->library('upload', $config);
 
-    if ( !$this->upload->do_upload('image') ) {
-
-      $datos['error'] = $this->upload->display_errors();
-      $datos['titulo'] = "Upload file Codeigniter";
-      $this->load->view('theme/backend/head_top');
-			$this->load->view('theme/backend/head_middle');
-			$this->load->view('theme/backend/head_bottom');
-			$this->load->view('backend/add_ofertas_v', $datos);
-    } 
-    else {
-
-      $nombre = $this->upload->data();
-      $datos['nombre']  = $nombre['file_name'];
-      $datos['titulo'] = "Upload file completed!";
-      $this->load->view('theme/backend/head_top');
-			$this->load->view('theme/backend/head_middle');
-			$this->load->view('theme/backend/head_bottom');
-			$this->load->view('backend/add_ofertas_v', $datos);
-      //End file funtion
+    		// Nota: error cuando no existe la carpeta *ofertas o no tiene permisos*
+			if ( !$this->upload->do_upload('image') ) {
+				$datos['error'] = $this->upload->display_errors();
+				$datos['titulo'] = "Upload file Codeigniter";
+			} else {
+				$nombre = $this->upload->data();
+				$datos['nombre']  = $nombre['file_name'];
+				$datos['titulo'] = "Upload file completed!";
 
 				/**
 				 * Insertamos valores en al base de datos
@@ -121,41 +98,46 @@ class Ofertas extends CI_Controller {
 				$category = explode("-",$category);
 
 				$data = array (
-					'id_category' 						=> $category[0],
-					'name_category'						=> $category[1],
+					'id_category' => $category[0],
+					'name_category'	=> $category[1],
 					'tags'=> implode(",", $this->input->post('tags') ),
-					'label_image'							=> $this->input->post('label'),
-					'title'										=> $this->input->post('title'),
-					'resumen'									=> $this->input->post('resumen'),
-					'description'							=> $this->input->post('description'),
-					'image'										=> $nombre['file_name'],
-					'type'										=> $this->input->post('type_anuncio'),
-					'link' 										=> '#',
-					'terms' 									=> $this->input->post('terms'),
-					'external_link' 					=> $this->input->post('external_link'),
+					'label_image' => $this->input->post('label'),
+					'title'	=> $this->input->post('title'),
+					'resumen' => $this->input->post('resumen'),
+					'description' => $this->input->post('description'),
+					'image' => $nombre['file_name'],
+					'type' => $this->input->post('type_anuncio'),
+					'link' => '#',
+					'terms' => $this->input->post('terms'),
+					'external_link' => $this->input->post('external_link'),
 					'share' => !empty($this->input->post('share')) ? true : false,
-					'facebook' 								=> '#',
-					'twitter' 								=> '#',
-					'youtube' 								=> '#',
-					'bar_offert_title'				=> $this->input->post('bar_offert_title'),
-					'bar_offert_description'	=> $this->input->post('bar_offert_description'),
-					'create'									=> $this->input->post('create'),
-					'create_strtotime'				=> strtotime( $this->input->post('create') ),
-					'expira'									=> $this->input->post('expira'),
-					'expira_strtotime'				=> strtotime( $this->input->post('expira') ),
-					'update'									=> '0000-00-00 00:00:00',
-					'status' 									=> '1'
-				);			
-				//echo "<pre>"; print_r( $this->input->post() );
+					'facebook' => '#',
+					'twitter' => '#',
+					'youtube' => '#',
+					'bar_offert_title' => $this->input->post('bar_offert_title'),
+					'bar_offert_description' => $this->input->post('bar_offert_description'),
+					'create' => $this->input->post('create'),
+					'create_strtotime' => strtotime( $this->input->post('create') ),
+					'expira' => $this->input->post('expira'),
+					'expira_strtotime' => strtotime( $this->input->post('expira') ),
+					'update' => '0000-00-00 00:00:00',
+					'status' => '1'
+				);
+
 				$this->ofertas_m->insert_oferta($data);
 				header('Location: /backend');
 			}
-
 		}
+
+
+		$data['category'] = $this->ofertas_m->get_category();
+		$data["label"] = $this->ofertas_m->get_label();
+		$this->load->view('theme/backend/head_top');
+		$this->load->view('theme/backend/head_middle');
+		$this->load->view('theme/backend/head_bottom');
+		$this->load->view('backend/add_ofertas_v', $data);
 	}
 
-
-	//Eliminar oferta
 	public function delete_oferta() 
 	{
 		//Comprobamos si la petición is AJAX
