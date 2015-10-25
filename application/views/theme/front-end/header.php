@@ -91,63 +91,44 @@
                 <div class="menu_2">
                		<ul>
                         <li>
-                            <a href="https://global.americanexpress.com/myca/intl/acctsumm/emea/accountSummary.do?request_type=&Face=es_ES&Face=es_ES">
+                            <a href="https://global.americanexpress.com/myca/intl/acctsumm/emea/accountSummary.do?request_type=&Face=es_ES&Face=es_ES"
+                             data="submenu_only_lg_1"> >
                             <i><img src="/assets/images/icon/user.png"></i><span>mi cuenta</span></a>
                         </li>
                         <li>
-                            <a href="https://www.americanexpress.com/es/content/cards.html">
+                            <a href="https://www.americanexpress.com/es/content/cards.html" 
+                            data="submenu_only_lg_2">
                             <i><img src="/assets/images/icon/creditcard.png"></i>
                             <span>tarjetas</span></a>
                         </li>
                         <li>
-                            <a href="https://www.americanexpress.com/es/content/travel.html">
+                            <a href="https://www.americanexpress.com/es/content/travel.html"
+                             data="submenu_only_lg_3">
                             <i><img src="/assets/images/icon/plane.png"></i>
                             <span>viajes</span></a>
                         </li>
                         <li>
-                            <a href="https://www.seguros.americanexpress.es/">
+                            <a href="https://www.seguros.americanexpress.es/"
+                             data="submenu_only_lg_4">
                             <i><img src="/assets/images/icon/security.png"></i>
                             <span>seguros</span></a>
                         </li>
                         <li>
-                            <a href="https://www.americanexpress.com/es/content/cardmember-benefits/points-program/membership-rewards-club.html">
+                            <a href="https://www.americanexpress.com/es/content/cardmember-benefits/points-program/membership-rewards-club.html"
+                             data="submenu_only_lg_5">
                             <i><img src="/assets/images/icon/premios.png"></i>
                             <span>premios</span></a>
                         </li>
                         <li>
-                            <a href="https://www.americanexpress.com/es/content/small-business/cards.html">
+                            <a href="https://www.americanexpress.com/es/content/small-business/cards.html"
+                             data="submenu_only_lg_6">
                             <i><img src="/assets/images/icon/empresas.png"></i>
                             <span>empresas</span></a>
                         </li>
                 	</ul>
 
                   <!--Submenu only LG-->
-                  <div id="submenu_only_lg" style="display: none">
-                    <div class="row">
-                      <div class="col-sm-4 col-md-4 col-lg-4 box">
-                        <div class="title">Servicio Personal de Viajes</div>
-                        <ul>
-                          <li><a href="https://www.americanexpress.com/es/content/cardmember-benefits.html?inav=es_menu_cards_pc_membe">Ventajas de Ser Titular</a></li>
-                          <li><a href="https://www.americanexpress.com/es/content/cards/all-cards.html?inav=es_menu_cards_pc_viewcrd">Consulte todas las Tarjetas</a></li>
-                          <li><a href="http://www.americanexpress.com/spain/comparar-tarjetas?inav=es_menu_cards_pc_chocard">Solicite una Tarjeta</a></li>
-                          <li><a href="http://www.americanexpress.com/spain/tarjetas-credito?inav=es_menu_cards_pc_applynow">Tarjetas de Crédito</a></li>
-                          <li><a href="http://www.americanexpress.es/invites?inav=es_menu_cards_pc_invites">American Express Invites</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-sm-4 col-md-4 col-lg-4 box">
-                        <div class="title">Tarjetas para Autónomos y PYMES</div>
-                        <ul>
-                          <li><a href="https://www.americanexpress.com/spain/amexbarcelo/amex-barcelo.shtml?inav=es_menu_travel_bt_mgmt">Gestión de Viajes de Empresa</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-sm-4 col-md-4 col-lg-4 box">
-                        <div class="title">Servicio Divisas/Cheques de Viaje</div>
-                        <ul>
-                          <li><a href="https://www.americanexpress.com/es/content/travel/travelers-cheques.html?inav=es_menu_travel_tm_cheques">Cheques de Viaje</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                  <?php $this->load->view("theme/front-end/submenu.php"); ?>
                   <!-- /Submenu only LG-->
 
 
